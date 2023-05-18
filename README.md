@@ -1,37 +1,40 @@
-# Instagram Unfollower Tracker
+# InstaUnfollower
 
-This application helps you track your Instagram followers, identify unfollowers, and open their profiles in a web browser.
+This Python script helps you analyze your Instagram followers and following lists to identify unfollowers. It also provides the ability to open the profiles of the unfollowers in a web browser for further inspection.
 
-![Instagram Logo](path/to/instagram_logo.png)
+## How it Works
 
-## Table of Contents
+1. The script reads two HTML files, `followers.html` and `following.html`, which contain the follower and following information, respectively.
+2. It uses the BeautifulSoup library to parse the HTML content and extract relevant data.
+3. The usernames of your followers and following are extracted from the HTML files and stored in separate lists.
+4. The lists are converted to sets to filter out duplicates.
+5. The script compares the sets of followers and following to identify unfollowers (users who follow you but you don't follow back) and users whom you don't follow.
+6. The results are printed to the console, including the number of followers, following, unfollowers, and users you don't follow.
+7. The script opens a web browser and displays the profile of the first unfollower.
 
-- [About](#about)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+## Setup
 
-## About
+1. Clone this repository to your local machine or download the script file.
+2. Make sure you have Python installed on your system.
+3. Install the required dependencies by running the following command in your terminal:pip install beautifulsoup4
 
-The Instagram Unfollower Tracker is a Python script that reads HTML files containing follower and following information from Instagram. It then compares the lists of followers and following to determine the users who have unfollowed you. Finally, it opens the profiles of the unfollowers in a web browser.
-
-## Installation
-
-To use this application, follow the steps below:
-
-1. Clone the repository: `git clone https://github.com/your-username/instagram-unfollower-tracker.git`
-2. Navigate to the project directory: `cd instagram-unfollower-tracker`
-3. Install the required dependencies: `pip install -r requirements.txt`
-
-Note: This application uses the `bs4` library, so make sure it is installed.
 
 ## Usage
 
-To use the Instagram Unfollower Tracker, follow these steps:
+1. Export your Instagram follower and following lists as HTML files. You can do this by using a tool or service that provides this functionality.
+2. Place the `followers.html` and `following.html` files in the same directory as the script.
+3. Open a terminal or command prompt and navigate to the directory where the script is located.
+4. Run the script using the following command: python insta_unfollower.py
 
-1. Export your followers and following lists from Instagram as HTML files. Save the followers file as `followers.html` and the following file as `following.html`. Place these files in the project directory.
-2. Open the Python script `instagram_unfollower_tracker.py` in a text editor.
-3. Modify the `directory` variable to specify the path to the project directory where the HTML files are located. For example:
-   ```python
-   directory = r'C:\Users\YourUsername\instagram-unfollower-tracker'
+5. The script will process the HTML files, compare the lists, and print the results to the console.
+6. It will also open a web browser with the profile of the first unfollower for further inspection.
+
+**Notes:**
+- Make sure the HTML files are named `followers.html` and `following.html` and are located in the same directory as the script. If your files have different names or are located elsewhere, update the file paths in the script accordingly.
+- The script assumes that the HTML files have a specific structure. If the structure of the HTML files changes, you may need to modify the script to match the new structure.
+- Be cautious when running scripts that access and parse HTML files. Make sure the files come from trusted sources to avoid potential security risks.
+
+**Disclaimer:**
+This script is provided as-is without any warranty. Use it at your own risk. The author is not responsible for any misuse or damages caused by the script.
+
+Feel free to customize and modify the script to fit your specific needs.
